@@ -1,0 +1,45 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: eLabFTW Template Repository
+message: >-
+  If you use this dataset, please cite it using the metadata
+  from this file.
+type: dataset
+authors:
+  - given-names: Neele
+    family-names: Drobnitzky
+    email: neele.drobnitzky@bzh.uni-heidelberg.de
+    affiliation: Heidelberg University
+    orcid: 'https://orcid.org/0000-0002-3181-941X'
+  - given-names: Achim
+    family-names: Winandi
+    affiliation: Karlsruhe Institute of Technology
+    orcid: 'https://orcid.org/0000-0003-4800-7925'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21103853
+    description: Version 1.0 deposited on Zenodo
+abstract: >-
+  Setting up an electronic lab notebook takes time most
+  researchers do not have. Every group ends up solving the
+  same documentation problems independently. This repository
+  is an attempt to do that work together instead.
+
+
+  The aim is a shared collection of eLabFTW templates and
+  reference entries that any lab can download, import, and
+  adapt. Templates are designed to be comprehensive and
+  educational — they document not just what to record but
+  why — and to interlink with each other as a coherent
+  package. Fields that are irrelevant to a particular group
+  can simply be removed or ignored; the templates are a
+  starting point, not a prescription.
+keywords:
+  - eLabFTW
+  - ELN
+  - Templates
+  - SFB 1638
+  - CRC 1638
+license: CC0-1.0
