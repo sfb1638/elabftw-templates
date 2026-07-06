@@ -9,6 +9,8 @@ This workflow is designed for external contributors who:
 - Modify the content in eLabFTW
 - Export and upload the modified `.eln` file through GitHub
 
+It also covers contributors who want to add a brand-new template to the repository rather than change an existing file.
+
 No Git command line or local Git installation is required.
 
 ---
@@ -25,6 +27,19 @@ The contributor does not edit the `.eln` file directly with a text editor or arc
 4. Exports the modified content as a new `.eln` file.
 5. Uploads the exported `.eln` file to GitHub.
 
+When adding a new template, there is nothing to download or import first. The contributor builds the template in eLabFTW, exports it as an `.eln` file, and uploads that file to the correct folder.
+
+---
+
+## Two kinds of contribution
+
+This workflow covers two cases:
+
+- **Editing an existing file.** You download an `.eln` file from the repository, import it into eLabFTW, change it, and export it again under the same filename.
+- **Adding a new template.** You build a new template in eLabFTW, export it as an `.eln` file, and upload it to the correct folder under a new filename.
+
+Both cases share the same fork, upload, branch and pull request steps. They differ only at the start. An edit begins with a download and import (sections 3 and 4). A new template begins with you creating it in eLabFTW. The notes below mark where the steps differ.
+
 ---
 
 ## Overview
@@ -32,23 +47,33 @@ The contributor does not edit the `.eln` file directly with a text editor or arc
 ```
 Original repository: main branch
         │
-        │ Fork
+        │ Fork, then sync your fork's main branch
         ▼
 Contributor's fork: main branch
         │
-        │ Download the .eln file
-        ▼
-Import the file into eLabFTW
-        │
-        │ Modify and export
-        ▼
-Upload the modified .eln file to a new branch
-        │
-        ▼
-Open a pull request against the original main branch
-        │
-        ▼
-Review and merge
+        ├──────────────────────────────┐
+        │                              │
+   Edit an existing file          Add a new template
+        │                              │
+        ▼                              ▼
+Download the .eln file         Create the template in eLabFTW
+        │                              │
+        ▼                              ▼
+Import into eLabFTW            Export as a new .eln file
+        │                              │
+        ▼                              │
+Modify and export                      │
+        │                              │
+        └───────────────┬──────────────┘
+                        │
+                        ▼
+  Navigate to the correct folder in your fork and upload the file
+                        │
+                        ▼
+  Commit to a new branch, then open a pull request against main
+                        │
+                        ▼
+                 Review and merge
 ```
 
 ---
@@ -95,6 +120,8 @@ If GitHub reports a conflict, stop and contact the repository maintainer before 
 
 ## 3. Download the `.eln` file
 
+> **New template:** skip this section. There is no existing file to download. Go to section 5 and build the template in eLabFTW.
+
 Always download the current file from the synchronized main branch of your fork.
 
 1. Open your fork.
@@ -119,6 +146,8 @@ Do not extract, unzip or manually edit the contents of the `.eln` file.
 
 ## 4. Import the `.eln` file into eLabFTW
 
+> **New template:** skip this section. There is nothing to import. Go to section 5 and build the template in eLabFTW.
+
 Use an eLabFTW instance where you are authorized to import and modify the content.
 
 1. Sign in to the eLabFTW instance.
@@ -140,9 +169,9 @@ Do not upload confidential or sensitive information to an eLabFTW instance unles
 
 ---
 
-## 5. Modify the content in eLabFTW
+## 5. Modify or create the content in eLabFTW
 
-Make the required changes using the eLabFTW interface. Depending on the contribution, this may include:
+**Editing an existing file:** make the required changes to the imported content using the eLabFTW interface. Depending on the contribution, this may include:
 
 - Correcting text
 - Updating experimental instructions
@@ -153,52 +182,59 @@ Make the required changes using the eLabFTW interface. Depending on the contribu
 - Revising steps or procedures
 - Correcting formatting
 
-Review the modified content carefully before exporting it. Confirm that:
+**Adding a new template:** build the template from scratch in eLabFTW as a resource or experiment template, following the same conventions as the templates already in the repository (field names, structure, controlled vocabularies, footer, and any delete-line divider the repository uses).
 
-- Only the intended content was changed
+Review the content carefully before exporting it. Confirm that:
+
+- Only the intended content was changed, or the new template is complete
 - No confidential information was added
 - No unrelated experiments or resources were included
-- Required attachments are still present
-- The modified content can be opened correctly in eLabFTW
+- Required attachments are present
+- The content can be opened correctly in eLabFTW
 
 ---
 
-## 6. Export the modified content as an `.eln` file
+## 6. Export the content as an `.eln` file
 
-After completing the changes, export the modified content from eLabFTW in `.eln` format.
+Export the content from eLabFTW in `.eln` format.
 
-1. Open the modified experiment or resource.
+1. Open the experiment, resource or template.
 2. Select the appropriate export function.
 3. Choose the eLabFTW `.eln` or ELN archive export format.
-4. Export the modified content.
+4. Export the content.
 5. Save the exported file to your computer.
 
-The exported file must retain the `.eln` extension.
+The exported file must retain the `.eln` extension. Do not change the extension to `.zip`, even though the `.eln` file is internally based on a ZIP archive.
 
-When possible, give the exported file exactly the same filename as the file downloaded from GitHub. eLabFTW or your browser may create a filename such as `example-experiment (1).eln` — rename it to the exact original filename before uploading.
+**Filename for an edited file:** give the exported file exactly the same filename as the file you downloaded from GitHub. eLabFTW or your browser may create a filename such as `example-experiment (1).eln`. Rename it to the exact original filename before uploading.
 
-Do not change the `.eln` extension to `.zip`, even though the `.eln` file is internally based on a ZIP archive.
+**Filename for a new template:** choose a new, descriptive filename in lowercase with hyphens, ending in `.eln`, for example `microscopy-experiment-metadata.eln`. Confirm the name is not already used in the folder where the template belongs, so your upload does not overwrite an existing file.
 
 ---
 
-## 7. Upload the modified `.eln` file
+## 7. Upload the `.eln` file
 
-The exported file must be uploaded to the same folder and with the same filename as the original file. Otherwise, GitHub may add a second file instead of replacing the existing file.
+How you name and place the file depends on whether you are replacing an existing file or adding a new one.
+
+- **Edited file:** upload it to the same folder and with the same filename as the original. Otherwise GitHub adds a second file instead of replacing the existing one.
+- **New template:** upload it to the folder where that type of template belongs, with a new filename that does not already exist in that folder.
+
+In both cases, **navigate to the correct folder in your fork before you upload.** GitHub places the file in whichever folder you are viewing when you select **Add file**, so an upload started from the wrong folder puts the file in the wrong place.
 
 1. Return to your fork on GitHub.
 2. Confirm that you are viewing the **main** branch.
-3. Navigate to the folder containing the original `.eln` file.
+3. **Navigate to the folder where the file belongs.** For an edited file this is the folder that contains the original. For a new template this is the folder that matches its type or DFG discipline classification in the repository.
 4. Select **Add file**.
 5. Select **Upload files**.
-6. Drag the modified `.eln` file into the upload area, or select **Choose your files**.
-7. Confirm that the filename exactly matches the original filename.
-8. Confirm that you are uploading it to the original folder.
+6. Drag the `.eln` file into the upload area, or select **Choose your files**.
+7. Confirm the filename. For an edited file it must match the original exactly. For a new template it must be descriptive and not already in use in that folder.
+8. Confirm that the folder shown above the upload area is the folder you intend.
 
 ---
 
 ## 8. Create a separate branch for the change
 
-Do not commit the modified `.eln` file directly to the fork's main branch.
+Do not commit the `.eln` file directly to the fork's main branch.
 
 On the upload page:
 
@@ -207,9 +243,15 @@ On the upload page:
 3. Enter a descriptive branch name.
 4. Select **Propose changes**.
 
-Example branch names: `update-example-experiment`, `correct-sample-metadata`, `revise-eln-procedure`
+Example branch names:
 
-Example commit messages: `Update example experiment`, `Correct metadata in ELN template`, `Revise sample preparation procedure`
+- Editing an existing file: `update-example-experiment`, `correct-sample-metadata`, `revise-eln-procedure`
+- Adding a new template: `add-microscopy-metadata-template`, `add-confocal-imaging-experiment-template`, `add-flow-cytometry-resource-template`
+
+Example commit messages:
+
+- Editing an existing file: `Update example experiment`, `Correct metadata in ELN template`, `Revise sample preparation procedure`
+- Adding a new template: `Add microscopy metadata experiment template`, `Add confocal imaging experiment template`
 
 GitHub saves the uploaded file as a commit on the new branch.
 
@@ -217,7 +259,7 @@ GitHub saves the uploaded file as a commit on the new branch.
 
 ## 9. Open a pull request against main
 
-A pull request asks the maintainers of the original repository to review and accept the modified `.eln` file.
+A pull request asks the maintainers of the original repository to review and accept the `.eln` file.
 
 After uploading the file, look for a banner offering **Compare & pull request** and select it.
 
@@ -242,18 +284,18 @@ Before creating the pull request, confirm that:
 
 ## 10. Write the pull request description
 
-Use a clear title that summarizes the change, for example: `Update the sample preparation ELN template`
+Use a clear title that summarizes the change, for example `Update the sample preparation ELN template` for an edit, or `Add a microscopy metadata experiment template` for a new template.
 
 In the description, explain:
 
-- Which `.eln` file was changed
-- What was changed in eLabFTW
-- Why the change is needed
+- Which `.eln` file was changed, or that the file is a new template
+- What was changed in eLabFTW, or what the new template is for
+- Why the change or new template is needed
 - Which eLabFTW instance or version was used, when relevant
 - How the exported file was checked
 - Whether the contribution relates to an existing issue
 
-Example:
+Example for an edit:
 
 ```markdown
 ## What changed
@@ -278,15 +320,36 @@ successfully imported into a clean eLabFTW workspace.
 Fixes #123
 ```
 
+Example for a new template:
+
+```markdown
+## What changed
+
+Added `templates/microscopy-experiment-metadata.eln`.
+
+This is a new experiment template for recording microscopy acquisition
+metadata. It was built in eLabFTW and exported as an `.eln` file.
+
+## Why
+
+The repository did not yet have a template for microscopy acquisition
+metadata, which several groups need for consistent documentation.
+
+## Verification
+
+The template was exported from eLabFTW as an `.eln` file and
+successfully imported into a clean eLabFTW workspace.
+```
+
 Select **Create pull request** when the contribution is ready for review. Use **Create draft pull request** when the work is incomplete.
 
 ---
 
 ## 11. Review limitations for `.eln` files
 
-An `.eln` file is an archive rather than a normal text file. GitHub may therefore treat it as a binary file and may not display a detailed line-by-line comparison of the changes — the pull request may show only that the file was replaced.
+An `.eln` file is an archive rather than a normal text file. GitHub may therefore treat it as a binary file and may not display a detailed line-by-line comparison of the changes. For an edit, the pull request may show only that the file was replaced. For a new template, it may show only that a file was added.
 
-For this reason, the pull request description must clearly state what was changed. Maintainers may need to download the proposed `.eln` file, import it into a test eLabFTW instance, and compare it with the current version manually.
+For this reason, the pull request description must clearly state what was changed or added. Maintainers may need to download the proposed `.eln` file, import it into a test eLabFTW instance, and compare it with the current version or review it on its own.
 
 ---
 
@@ -323,9 +386,9 @@ Because the `.eln` file is an archive, the maintainer should not rely only on Gi
 
 1. Read the pull request title and description.
 2. Confirm the pull request targets the **main** branch.
-3. Confirm the correct `.eln` file was replaced and no unrelated files were added.
+3. Confirm the correct `.eln` file was replaced, or that a new template was added to the correct folder, and that no unrelated files were added.
 4. Download the proposed `.eln` file and import it into a test eLabFTW instance.
-5. Check the experiment or resource content, metadata, attachments, links and formatting.
+5. Check the experiment, resource or template content, metadata, attachments, links and formatting.
 6. Confirm the file imports without errors.
 7. Request corrections when necessary, then approve and merge when ready.
 8. Delete the contribution branch when appropriate.
@@ -346,15 +409,18 @@ The old contribution branch can then be deleted.
 
 ## Pre-submission checklist
 
+For a new template, skip the download and import items. Confirm instead that you created and exported the template in eLabFTW and placed it in the correct folder under a new filename.
+
 - [ ] I created my fork from the original repository's **main** branch.
 - [ ] I synchronized the main branch of my fork before starting.
-- [ ] I downloaded the latest `.eln` file from **main**.
-- [ ] I imported the `.eln` file into an authorized eLabFTW instance.
-- [ ] I made the changes in eLabFTW.
-- [ ] I exported the modified content in `.eln` format.
-- [ ] I kept the original filename and `.eln` extension.
+- [ ] (Edit only) I downloaded the latest `.eln` file from **main**.
+- [ ] (Edit only) I imported the `.eln` file into an authorized eLabFTW instance.
+- [ ] I made the changes in eLabFTW, or built the new template in eLabFTW.
+- [ ] I exported the content in `.eln` format.
+- [ ] (Edit only) I kept the original filename and `.eln` extension.
+- [ ] (New template only) I gave the file a descriptive filename that is not already used in the target folder.
 - [ ] I did not unzip or manually modify the archive.
-- [ ] I uploaded the file to the correct repository folder.
+- [ ] I navigated to the correct folder in my fork before uploading.
 - [ ] I created a separate contribution branch.
 - [ ] My pull request targets the original repository's **main** branch.
 - [ ] I described the changes clearly in the pull request.
@@ -373,7 +439,9 @@ The old contribution branch can then be deleted.
 
 **Uploading an automatically renamed file** — the browser or eLabFTW may save the export as `example-experiment (1).eln`. Rename it to the exact original filename before uploading.
 
-**Uploading to the wrong folder** — GitHub adds another file instead of replacing the original. Navigate to the original file's folder before selecting Upload files.
+**Uploading to the wrong folder** — GitHub adds another file instead of replacing the original, or places a new template where it does not belong. Navigate to the correct folder before selecting Upload files.
+
+**Giving a new template a filename that already exists** — GitHub replaces the existing file instead of adding yours. Check the folder first and choose a name that is not already in use.
 
 **Uploading directly to main** — select **Create a new branch for this commit and start a pull request** instead.
 
