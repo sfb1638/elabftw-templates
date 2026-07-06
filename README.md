@@ -80,23 +80,27 @@ Each of the four scientific disciplines (matching the top level of the DFG class
 
 ## File naming convention
 
-Since templates for an entire discipline (e.g. all of Life Sciences) sit together in one flat `2_Experiments` / `2_Resources` folder, the filename prefix is what lets people filter for the subject area they're interested in. Prefix your filename with the DFG subject area number, at whichever of two levels of detail fits:
+Since templates for an entire discipline (e.g. all of Life Sciences) sit together in one flat `2_Experiments` / `2_Resources` folder, the filename prefix is what lets people filter for the subject area they're interested in. Prefix your filename with the DFG number at whichever level fits:
 
 ```
-# Subject area level — recommended for most contributions
+# Subject area level — for content specific to one Review Board
 2.11_biochemistry_protein_expression.eln
 2.21_microbiology_growth_curve.eln
 
-# Broader grouping — for templates not tied to one specific subject area
-2.1_Mammalian_Cells.eln
+# Research area level — for content that spans several related subject areas but still belongs clearly to one DFG research area
+2.2_regulatory_approval_documentation.eln
 
+# Discipline level — for techniques or content used across the whole discipline
+2_mammalian_cells.eln
 ```
 
-`2.11`, `2.21`, etc. are the **Subject Area** codes from the DFG classification (e.g. 2.11 = Basic Research in Biology and Medicine, 2.21 = Microbiology, Virology and Immunology) — use this level whenever your template fits one subject area.
+`2.11`, `2.21`, etc. are the Subject Area codes from the DFG classification (e.g. 2.11 = Basic Research in Biology and Medicine, 2.21 = Microbiology, Virology and Immunology) — use this level whenever your template fits one subject area.
 
-`2.1`, `2.2`, `2.3` simply represent the DFG Research Area codes (21, 22, 23 — e.g. 22 = Medicine) with a dot inserted, since the bare two-digit form looks odd alongside the dotted subject area codes and doesn't sort well next to them.
+`2.1`, `2.2`, `2.3` represent the DFG Research Area codes (21, 22, 23 — e.g. 22 = Medicine) with a dot inserted for readability and sort order. Use this level only when the content genuinely belongs to one research area but doesn't fit a single subject area — typically field-specific rather than technique-specific content. A template for a widely used technique (mammalian cell culture, flow cytometry, Western blotting) likely applies across multiple research areas and belongs at the discipline level instead.
 
-The full DFG numbering (down to individual review boards, e.g. `2.11-01` Biochemistry) is listed in the [DFG Classification of Scientific Disciplines (2024–2028)](https://www.dfg.de/resource/blob/331950/fachsystematik-2024-2028-en.pdf); this repository only uses the coarser discipline and subject area levels for filenames, not individual review boards. For a browsable (non-numbered) overview of subject areas, see [re3data — Browse by subject](https://www.re3data.org/browse/by-subject/); note that re3data's categories don't map directly onto the DFG numbering, so use the DFG PDF as the authoritative source for the prefix itself.
+`2_` on its own marks a template relevant across the whole discipline. Use it for techniques and workflows that cut across research areas and subject areas alike.
+
+The full DFG numbering is listed in the [DFG Classification of Scientific Disciplines (2024–2028)](https://www.dfg.de/resource/blob/331950/fachsystematik-2024-2028-en.pdf). For a browsable (non-numbered) overview, see [re3data — Browse by subject](https://www.re3data.org/browse/by-subject/); note that re3data's categories don't map directly onto the DFG numbering, so use the DFG PDF as the authoritative source for the prefix.
 
 ---
 
