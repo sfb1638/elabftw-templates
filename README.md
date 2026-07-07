@@ -145,8 +145,8 @@ By submitting a pull request, you agree to license your contribution under [CC0 
 
 ---
 
-## License
+## Repository
 
-All templates in this repository are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) — no rights reserved. You are free to use, adapt, and redistribute them without restriction, for any purpose.
+This repository was initiated by the INF team of SFB 1638 / CRC 1638, Biochemistry Centre (BZH), Heidelberg University. The repository infrastructure and documentation were developed by Neele Drobnitzky ([ORCID iD: 0000-0002-3181-941X](https://orcid.org/0000-0002-3181-941X)) and Achim Winandi ([ORCID iD: 0000-0003-4800-7925](https://orcid.org/0000-0003-4800-7925)). Achim Winandi developed the ([ELN Metadata Diff Viewer](https://achimw.codeberg.page/eln-metadata-diff/)).
 
-Developed by the INF team of SFB 1638 / CRC 1638, Biochemistry Centre (BZH), University of Heidelberg, mainly by Neele Drobnitzky ([ORCID iD: 0000-0002-3181-941X](https://orcid.org/0000-0002-3181-941X)), with support from Achim Winandi ([ORCID iD: 0000-0003-4800-7925](https://orcid.org/0000-0003-4800-7925)).
+The initial `_SFB1638` template collection was created by Neele Drobnitzky and is described in the accompanying user guide ([DOI: 10.5281/zenodo.20605341](https://doi.org/10.5281/zenodo.20605341)).
