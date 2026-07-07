@@ -4,11 +4,13 @@ Setting up an electronic lab notebook takes time most researchers do not have. E
 
 The aim is a shared collection of eLabFTW templates and reference entries that any lab can download, import, and adapt. Templates are designed to be comprehensive and educational — they document not just what to record but why — and to interlink with each other as a coherent package. Fields that are irrelevant to a particular group can simply be removed or ignored; the templates are a starting point, not a prescription.
 
-Templates are organised according to the [DFG Classification of Scientific Disciplines (2024–2028)](https://www.dfg.de/resource/blob/331950/fachsystematik-2024-2028-en.pdf). Initial contributions from the CRC 1638 INF Team are primarily relevant for Biology/Medicine.
+Templates are organised according to the [DFG Classification of Scientific Disciplines (2024–2028)](https://www.dfg.de/resource/blob/331950/fachsystematik-2024-2028-en.pdf). Initial contributions from the CRC 1638 INF Team are primarily relevant to Biology/Medicine.
 
 Templates are distributed as `.eln` files ([ELN file format](https://github.com/TheELNConsortium/TheELNFileFormat), a ZIP-based open standard) and can be imported directly into any eLabFTW instance via **Admin panel → Import**.
 
-This package was originally developed for SFB 1638 / CRC 1638 at the Biochemistry Centre (BZH), University of Heidelberg, and is released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
+Templates suffixed with `_SFB1638` were originally developed as part of a template package for SFB 1638 / CRC 1638 at the Biochemistry Centre (BZH), University of Heidelberg, and are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). The package is described in the published user guide ([DOI: 10.5281/zenodo.20605341](https://doi.org/10.5281/zenodo.20605341)).
+
+Unless otherwise stated, templates in this repository are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ---
 
@@ -125,6 +127,10 @@ Contributions require a GitHub account. There are two types:
 **Suggesting a modification to an existing template** — import the existing `.eln` file into your eLabFTW instance, make your changes there, export the modified file with the same filename, and propose it back via a pull request. The pull request can then be reviewed using the [ELN Metadata Diff Viewer](#comparing-versions-and-reviewing-changes-the-eln-diff-viewer).
 
 For the full step-by-step workflow including common mistakes and a pre-submission checklist, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+**⚠️ Licensing requirement**
+
+By submitting a pull request, you agree to license your contribution under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ---
 
