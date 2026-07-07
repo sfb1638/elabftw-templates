@@ -17,7 +17,7 @@ This package was originally developed for SFB 1638 / CRC 1638 at the Biochemistr
 Because `.eln` files are ZIP archives, GitHub cannot show a readable diff of what changed inside them. 
 The **ELN Metadata Diff Viewer** solves this: paste a pull request URL, and it extracts the metadata from both versions of the `.eln` file and shows exactly what changed — with the option to mask UUIDs and dates that eLabFTW regenerates on every export and that are not real changes.
 
-> **ELN Metadata Diff Viewer:** https://achimw.codeberg.page/eln-metadata-diff/ and KIT Open Link
+> **ELN Metadata Diff Viewer:** https://achimw.codeberg.page/eln-metadata-diff/
 
 This tool is central to how feedback works in this repository: when someone proposes a modification to an existing template via a pull request, maintainers and other contributors can use the diff viewer to review the actual content changes without having to import the file into eLabFTW first.
 
@@ -131,7 +131,7 @@ For the full step-by-step workflow including common mistakes and a pre-submissio
 ## Related resources
 
 - **[eln.community](https://eln.community/)** — Deltablot's template sharing hub for eLabFTW
-- **[ELN Diff Viewer](https://b0e40cdf-d194-43cd-ba7a-a799ba9e559e.ka.bw-cloud-instance.org/eln-web-differ/web-eln-differ.html)** — compare `.eln` file versions across a pull request *(temporary URL)*
+- **[ELN Metadata Diff Viewer](https://achimw.codeberg.page/eln-metadata-diff/)** — compare `.eln` file versions across a pull request
 - **[eLabFTW documentation](https://doc.elabftw.net/)**
 - **[ELN file format specification](https://github.com/TheELNConsortium/TheELNFileFormat)**
 - **[DFG subject area classification (2024–2028)](https://www.dfg.de/resource/blob/331950/fachsystematik-2024-2028-en.pdf)** — authoritative source for filename prefix numbering
