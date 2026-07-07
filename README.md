@@ -143,4 +143,4 @@ For the full step-by-step workflow including common mistakes and a pre-submissio
 
 All templates in this repository are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) — no rights reserved. You are free to use, adapt, and redistribute them without restriction, for any purpose.
 
-Developed by the INF team of SFB 1638 / CRC 1638, Biochemistry Centre (BZH), University of Heidelberg, mainly by Neele Drobnitzky ([ORCID iD: 0000-0002-3181-941X](https://orcid.org/0000-0002-3181-941X)) and support by Achim Winandi ([ORCID iD: 0000-0003-4800-7925](https://orcid.org/0000-0003-4800-7925)).
+Developed by the INF team of SFB 1638 / CRC 1638, Biochemistry Centre (BZH), University of Heidelberg, mainly by Neele Drobnitzky ([ORCID iD: 0000-0002-3181-941X](https://orcid.org/0000-0002-3181-941X)), with support from Achim Winandi ([ORCID iD: 0000-0003-4800-7925](https://orcid.org/0000-0003-4800-7925)).
