@@ -44,7 +44,7 @@ This is useful for, e.g., comparing changes to the body HTML without importing t
 
 [eln.community](https://eln.community/) is Deltablot's template sharing hub for eLabFTW. All templates in this repository could also be shared there, and we encourage that.
 
-This repository exists in parallel because some users may want a system that makes it easier to return feedback and have it integrated. On eln.community, templates can be downloaded and used but there is currently no straightforward way to propose a modification to someone else's entry. Here, that workflow is built in: if you improve a template — say you add a missing field to an antibody template that turns out to be useful for your whole community — you can export the modified `.eln` file from eLabFTW and open a pull request. Others can review the change using the ELN Diff Viewer before it is merged. Whether this parallel approach proves useful enough to sustain remains to be seen; for now both platforms can coexist.
+This repository exists in parallel because some users may want a system that makes it easier to return feedback and have it integrated. On eln.community, templates can be downloaded and used but there is currently no straightforward way to propose a modification to someone else's entry. Here, that workflow is built in: if you improve a template — say you add a missing field to an antibody template that turns out to be useful for your whole community — you can export the modified `.eln` file from eLabFTW and open a pull request. Others can review the change using the ELN Metadata Diff Viewer before it is merged. Whether this parallel approach proves useful enough to sustain remains to be seen; for now both platforms can coexist.
 
 ---
 
@@ -122,7 +122,7 @@ Contributions require a GitHub account. There are two types:
 
 **Adding a new template** — export your template from eLabFTW as an `.eln` file, remove any institute-specific IDs or personal data (replace with descriptive placeholders, e.g. `REPLACE_WITH_ENTRY_ID`), fork this repository, upload the file to the appropriate folder, and open a pull request.
 
-**Suggesting a modification to an existing template** — import the existing `.eln` file into your eLabFTW instance, make your changes there, export the modified file with the same filename, and propose it back via a pull request. The pull request can then be reviewed using the [ELN Diff Viewer](#comparing-versions-and-reviewing-changes-the-eln-diff-viewer).
+**Suggesting a modification to an existing template** — import the existing `.eln` file into your eLabFTW instance, make your changes there, export the modified file with the same filename, and propose it back via a pull request. The pull request can then be reviewed using the [ELN Metadata Diff Viewer](#comparing-versions-and-reviewing-changes-the-eln-diff-viewer).
 
 For the full step-by-step workflow including common mistakes and a pre-submission checklist, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
