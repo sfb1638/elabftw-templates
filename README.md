@@ -1,4 +1,4 @@
-# eLabFTW Template Package
+# eLabFTW Template Repository
 
 Setting up an electronic lab notebook takes time most researchers do not have. Every group ends up solving the same documentation problems independently. This repository is an attempt to do that work together instead.
 
