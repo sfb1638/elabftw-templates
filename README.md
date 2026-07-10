@@ -147,6 +147,8 @@ By submitting a pull request, you agree to license your contribution under [CC0 
 
 ## Repository
 
-This repository was initiated by the INF team of SFB 1638 / CRC 1638, Biochemistry Centre (BZH), Heidelberg University. The repository infrastructure and documentation were developed by Neele Drobnitzky ([ORCID iD: 0000-0002-3181-941X](https://orcid.org/0000-0002-3181-941X)) and Achim Winandi ([ORCID iD: 0000-0003-4800-7925](https://orcid.org/0000-0003-4800-7925)). Achim Winandi developed the ([ELN Metadata Diff Viewer](https://achimw.codeberg.page/eln-metadata-diff/)).
+This repository was initiated by the INF team of SFB 1638 / CRC 1638 at the Biochemistry Centre (BZH), Heidelberg University. The repository infrastructure and documentation were developed by Neele Drobnitzky ([ORCID iD: 0000-0002-3181-941X](https://orcid.org/0000-0002-3181-941X)) and Achim Winandi ([ORCID iD: 0000-0003-4800-7925](https://orcid.org/0000-0003-4800-7925)). Achim Winandi also developed the [ELN Metadata Diff Viewer](https://achimw.codeberg.page/eln-metadata-diff/).
 
 The initial `_SFB1638` template collection was created by Neele Drobnitzky and is described in the accompanying user guide ([DOI: 10.5281/zenodo.20605341](https://doi.org/10.5281/zenodo.20605341)).
+
+We gratefully acknowledge Caroline Kolenda ([ORCID iD: 0009-0004-0860-6258](https://orcid.org/0009-0004-0860-6258)) and the [Meinecke Lab](https://bzh.db-engine.de/group/81/meinecke), led by Michael Meinecke ([ORCID iD: 0000-0003-1414-6951](https://orcid.org/0000-0003-1414-6951)), for contributing feature ideas, testing the templates, and providing valuable feedback throughout their development.
