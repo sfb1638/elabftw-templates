@@ -83,24 +83,21 @@ Modify and export                      │
 The contribution must be based on the main branch of the original repository.
 
 1. Sign in to GitHub.
-2. Open the original repository.
-3. Use the branch selector above the file list to confirm that **main** is selected.
-4. Select **Fork** near the upper-right corner.
-5. Select your GitHub account as the owner of the fork.
-6. Keep the suggested repository name.
-7. Leave **Copy the main branch only** selected, when this option is displayed.
-8. Select **Create fork**.
+2. Open the original [eLabFTW Template Repository][elabftw-template-repository].
+3. Select **Fork** near the upper-right corner.
+4. Select your GitHub account as the owner of the fork.
+5. Keep the suggested repository name.
+6. Leave **Copy the main branch only** selected, when this option is displayed.
+7. Select **Create fork**.
 
 GitHub creates a personal copy of the repository under your account.
 
 For example:
 
 ```
-Original repository:  github.com/project-owner/project
-Your fork:            github.com/your-name/project
+Original repository:  github.com/sfb1638/elabftw-templates
+Your fork:            github.com/your-name/elabftw-templates
 ```
-
-After creating the fork, confirm that the selected branch is **main**.
 
 ---
 
@@ -112,7 +109,7 @@ Before beginning a contribution, make sure the main branch of your fork contains
 2. Use the branch selector to select **main**.
 3. Select **Sync fork** above the list of files.
 4. Review the information displayed by GitHub.
-5. Select **Update branch**.
+5. Select **Update branch** (if your fork is behind the original repository).
 
 If GitHub reports a conflict, stop and contact the repository maintainer before replacing or deleting files.
 
@@ -126,7 +123,7 @@ Always download the current file from the synchronized main branch of your fork.
 
 1. Open your fork.
 2. Confirm that the selected branch is **main**.
-3. Navigate to the folder containing the `.eln` file.
+3. Navigate to the folder containing the `.eln` file (e.g. [2_Life_Sciences/2_Resources](2_Life_Sciences/2_Resources)).
 4. Select the `.eln` filename.
 5. Select the download button or **Download raw file**.
 6. Save the file to your computer.
@@ -151,7 +148,7 @@ Do not extract, unzip or manually edit the contents of the `.eln` file.
 Use an eLabFTW instance where you are authorized to import and modify the content.
 
 1. Sign in to the eLabFTW instance.
-2. Open the import function provided by the instance.
+2. Open the import function located under your account in the top right corner.
 3. Select the downloaded `.eln` file.
 4. Import the file.
 5. Confirm that the expected experiment, resource or associated content was imported correctly.
@@ -199,16 +196,15 @@ Review the content carefully before exporting it. Confirm that:
 Export the content from eLabFTW in `.eln` format.
 
 1. Open the experiment, resource or template.
-2. Select the appropriate export function.
-3. Choose the eLabFTW `.eln` or ELN archive export format.
-4. Export the content.
-5. Save the exported file to your computer.
+2. Select Export/Download directly below the resource title.
+3. Choose the ELN archive export format.
+4. Save the exported file to your computer.
 
 The exported file must retain the `.eln` extension. Do not change the extension to `.zip`, even though the `.eln` file is internally based on a ZIP archive.
 
-**Filename for an edited file:** give the exported file exactly the same filename as the file you downloaded from GitHub. eLabFTW or your browser may create a filename such as `example-experiment (1).eln`. Rename it to the exact original filename before uploading.
+**Filename for an edited file:** give the exported file exactly the same filename as the file you downloaded from GitHub. eLabFTW or your browser may create a filename such as `2026-07-13-133431-export.eln`. Rename it to the exact original filename before uploading.
 
-**Filename for a new template:** choose a new, descriptive filename in lowercase with hyphens, ending in `.eln`, for example `microscopy-experiment-metadata.eln`. Confirm the name is not already used in the folder where the template belongs, so your upload does not overwrite an existing file.
+**Filename for a new template:** choose a descriptive filename according to the file-naming conventions laid out in the [README](./README.md#file-naming-convention) (prefix according to DFG disicipline, research area, or subject area; use underscores `_` instead of spaces). Confirm the name is not already used in the folder where the template belongs, so your upload does not overwrite an existing file.
 
 ---
 
@@ -221,27 +217,20 @@ How you name and place the file depends on whether you are replacing an existing
 
 In both cases, **navigate to the correct folder in your fork before you upload.** GitHub places the file in whichever folder you are viewing when you select **Add file**, so an upload started from the wrong folder puts the file in the wrong place.
 
+Do not commit the `.eln` file directly to the fork's main branch. Instead, create a separate branch for the change.
+
 1. Return to your fork on GitHub.
 2. Confirm that you are viewing the **main** branch.
 3. **Navigate to the folder where the file belongs.** For an edited file this is the folder that contains the original. For a new template this is the folder that matches its type or DFG discipline classification in the repository.
-4. Select **Add file**.
+4. Select **Add file** near the upper-right corner.
 5. Select **Upload files**.
 6. Drag the `.eln` file into the upload area, or select **Choose your files**.
 7. Confirm the filename. For an edited file it must match the original exactly. For a new template it must be descriptive and not already in use in that folder.
 8. Confirm that the folder shown above the upload area is the folder you intend.
-
----
-
-## 8. Create a separate branch for the change
-
-Do not commit the `.eln` file directly to the fork's main branch.
-
-On the upload page:
-
-1. Enter a short description in the **Commit message** field.
-2. Select **Create a new branch for this commit and start a pull request**.
-3. Enter a descriptive branch name.
-4. Select **Propose changes**.
+9. Enter a short description in the **Commit message** field.
+10. Select **Create a new branch for this commit and start a pull request**.
+11. Enter a descriptive branch name.
+12. Select **Propose changes**.
 
 Example branch names:
 
@@ -257,19 +246,20 @@ GitHub saves the uploaded file as a commit on the new branch.
 
 ---
 
-## 9. Open a pull request against main
+## 8. Open a pull request against main
 
 A pull request asks the maintainers of the original repository to review and accept the `.eln` file.
 
-After uploading the file, look for a banner offering **Compare & pull request** and select it.
+After uploading the file, look for a banner offering **Compare & pull request** on the landing page of your fork and select it.
 
 If the banner does not appear:
 
-1. Open the original repository.
+1. Open the [original repository][elabftw-template-repository].
 2. Select **Pull requests**.
 3. Select **New pull request**.
 4. Select **Compare across forks**.
-5. Set the base repository to the original repository, base branch to **main**, head fork to your fork, and compare branch to your contribution branch.
+5. Set the **base repository to** `sfb1638/elabftw-templates` and **base** to `main`.
+6. Set the **head repository** to your fork and **compare** to your contribution branch.
 
 Before creating the pull request, confirm that:
 
@@ -282,7 +272,7 @@ Before creating the pull request, confirm that:
 
 ---
 
-## 10. Write the pull request description
+## 9. Write the pull request description
 
 Use a clear title that summarizes the change, for example `Update the sample preparation ELN template` for an edit, or `Add a microscopy metadata experiment template` for a new template.
 
@@ -345,21 +335,21 @@ Select **Create pull request** when the contribution is ready for review. Use **
 
 ---
 
-## 11. Review limitations for `.eln` files
+## 10. Review limitations for `.eln` files
 
-An `.eln` file is an archive rather than a normal text file. GitHub may therefore treat it as a binary file and may not display a detailed line-by-line comparison of the changes. For an edit, the pull request may show only that the file was replaced. For a new template, it may show only that a file was added.
+An `.eln` file is an archive rather than a normal text file. GitHub therefore treats it as a binary file and does not display a detailed line-by-line comparison of the changes. For an edit, the pull request may show only that the file was replaced. For a new template, it may show only that a file was added.
 
-For this reason, the pull request description must clearly state what was changed or added. Maintainers may need to download the proposed `.eln` file, import it into a test eLabFTW instance, and compare it with the current version or review it on its own.
-
----
-
-## 12. Allow maintainer edits
-
-When available, select **Allow edits from maintainers**. This allows project maintainers to make corrections on the pull-request branch. Because `.eln` files normally need to be edited through eLabFTW, maintainers may instead ask the contributor to make the requested corrections and upload another exported version.
+For this reason, the pull request description must clearly state what was changed or added. Maintainers may need to download the proposed `.eln` file, import it into a test eLabFTW instance, and compare it with the current version or review it on its own. The [ELN Metadata Diff Viewer](https://achimw.codeberg.page/eln-metadata-diff/) can help you review the changes directly from the pull request without having to import the file into eLabFTW.
 
 ---
 
-## 13. Respond to review comments
+## 11. Allow maintainer edits
+
+When available, select **Allow edits from maintainers** for the pull request. This allows project maintainers to make corrections on the pull-request branch. Because `.eln` files normally need to be edited through eLabFTW, maintainers may instead ask the contributor to make the requested corrections and upload another exported version.
+
+---
+
+## 12. Respond to review comments
 
 A maintainer may approve, request clarification, ask for corrections, or close the pull request. Respond to questions in the pull request conversation.
 
@@ -380,9 +370,9 @@ The existing pull request updates automatically. Do not create a second pull req
 
 ---
 
-## 14. Maintainer review
+## 13. Maintainer review
 
-Because the `.eln` file is an archive, the maintainer should not rely only on GitHub's file comparison. The maintainer should:
+Because the `.eln` file is a ZIP archive, maintainers should not rely on GitHub's file comparison. The [ELN Metadata Diff Viewer](https://achimw.codeberg.page/eln-metadata-diff/) can provide an overview of changes to the metadata. Maintainers should also:
 
 1. Read the pull request title and description.
 2. Confirm the pull request targets the **main** branch.
@@ -391,11 +381,10 @@ Because the `.eln` file is an archive, the maintainer should not rely only on Gi
 5. Check the experiment, resource or template content, metadata, attachments, links and formatting.
 6. Confirm the file imports without errors.
 7. Request corrections when necessary, then approve and merge when ready.
-8. Delete the contribution branch when appropriate.
 
 ---
 
-## 15. Synchronize after the pull request is merged
+## 14. Synchronize after the pull request is merged
 
 After the maintainer merges the pull request:
 
@@ -450,3 +439,6 @@ For a new template, skip the download and import items. Confirm instead that you
 **Opening the pull request against the wrong branch** — confirm the base repository is the original repository and the base branch is **main**.
 
 **Creating a second pull request after receiving feedback** — upload corrections to the existing pull request branch instead.
+
+
+[elabftw-template-repository]: https://github.com/sfb1638/elabftw-templates
