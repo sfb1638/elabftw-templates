@@ -99,6 +99,8 @@ Original repository:  github.com/sfb1638/elabftw-templates
 Your fork:            github.com/your-name/elabftw-templates
 ```
 
+Learn more about [Forking a repository (GitHub Docs)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
+
 ---
 
 ## 2. Synchronize the fork's main branch
@@ -112,6 +114,8 @@ Before beginning a contribution, make sure the main branch of your fork contains
 5. Select **Update branch** (if your fork is behind the original repository).
 
 If GitHub reports a conflict, stop and contact the repository maintainer before replacing or deleting files.
+
+Learn more about [Syncing a fork (GitHub Docs)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork#syncing-a-fork-branch-from-the-web-ui).
 
 ---
 
@@ -269,6 +273,8 @@ Before creating the pull request, confirm that:
 - The compare branch is your contribution branch
 - The correct `.eln` file is included
 - No unrelated files are included
+
+Learn more about [Creating a pull request form a fork (GitHub Docs)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
 ---
 
