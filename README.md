@@ -6,6 +6,8 @@ The aim is a shared collection of eLabFTW templates and reference entries that a
 
 Templates are organised according to the [DFG Classification of Scientific Disciplines (2024–2028)](https://www.dfg.de/resource/blob/331950/fachsystematik-2024-2028-en.pdf). Initial contributions from the CRC 1638 INF Team are primarily relevant to Biology/Medicine.
 
+**→ Browse the full [Template Catalog](TEMPLATES.md)**
+
 Templates are distributed as `.eln` files ([ELN file format](https://github.com/TheELNConsortium/TheELNFileFormat), a ZIP-based open standard) and can be imported directly into any eLabFTW instance via **Admin panel → Import**.
 
 Templates suffixed with `_SFB1638` were originally developed as part of a template package for SFB 1638 / CRC 1638 at the Biochemistry Centre (BZH), University of Heidelberg, and are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). The package is described in the published user guide ([DOI: 10.5281/zenodo.20605341](https://doi.org/10.5281/zenodo.20605341)).
