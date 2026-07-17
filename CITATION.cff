@@ -52,6 +52,7 @@ references:
     authors:
       - given-names: Neele
         family-names: Drobnitzky
+        email: neele.drobnitzky@bzh.uni-heidelberg.de
         affiliation: Heidelberg University
         orcid: 'https://orcid.org/0000-0002-3181-941X'
     doi: 10.5281/zenodo.20605340
