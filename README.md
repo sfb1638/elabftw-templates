@@ -4,13 +4,13 @@ Setting up an electronic lab notebook takes time most researchers do not have. E
 
 The aim is a shared collection of eLabFTW templates and reference entries that any lab can download, import, and adapt. Templates are designed to be comprehensive and educational — they document not just what to record but why — and to interlink with each other as a coherent package. Fields that are irrelevant to a particular group can simply be removed or ignored; the templates are a starting point, not a prescription.
 
-Templates are organised according to the [DFG Classification of Scientific Disciplines (2024–2028)](https://www.dfg.de/resource/blob/331950/fachsystematik-2024-2028-en.pdf). Initial contributions from the CRC 1638 INF Team are primarily relevant to Biology/Medicine.
+Templates are organised according to the [DFG Classification of Scientific Disciplines (2024–2028)](https://www.dfg.de/resource/blob/331950/fachsystematik-2024-2028-en.pdf). Initial contributions from the SFB 1638 / CRC 1638 INF Team are primarily relevant to Biology/Medicine.
 
 **→ Browse the full [Template Catalog](TEMPLATES.md)**
 
 Templates are distributed as `.eln` files ([ELN file format](https://github.com/TheELNConsortium/TheELNFileFormat), a ZIP-based open standard) and can be imported directly into any eLabFTW instance via **Admin panel → Import**.
 
-Templates suffixed with `_SFB1638` were originally developed as part of a template package for SFB 1638 / CRC 1638 at the Biochemistry Centre (BZH), University of Heidelberg, and are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). The package is described in the published user guide ([DOI: 10.5281/zenodo.20605341](https://doi.org/10.5281/zenodo.20605341)).
+Templates suffixed with `_SFB1638` were originally developed as part of a template package for INF team of [SFB 1638 / CRC 1638 INF project](https://www.sfb1638.de/node/44) [(DFG GEPRIS 511488495)](https://gepris.dfg.de/project/511488495?lang=en) at the Biochemistry Centre (BZH), University of Heidelberg, and are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). The package is described in the published user guide ([DOI: 10.5281/zenodo.20605340](https://doi.org/10.5281/zenodo.20605340)).
 
 Unless otherwise stated, templates in this repository are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
 
@@ -149,8 +149,8 @@ By submitting a pull request, you agree to license your contribution under [CC0 
 
 ## Repository
 
-This repository was initiated by the INF team of SFB 1638 / CRC 1638 at the Biochemistry Centre (BZH), Heidelberg University. The repository infrastructure and documentation were developed by Neele Drobnitzky ([ORCID iD: 0000-0002-3181-941X](https://orcid.org/0000-0002-3181-941X)) and Achim Winandi ([ORCID iD: 0000-0003-4800-7925](https://orcid.org/0000-0003-4800-7925)). Achim Winandi also developed the [ELN Metadata Diff Viewer](https://achimw.codeberg.page/eln-metadata-diff/).
+This repository was initiated by the INF team of [SFB 1638 / CRC 1638 INF project](https://www.sfb1638.de/node/44) [(DFG GEPRIS 511488495)](https://gepris.dfg.de/project/511488495?lang=en) at the Biochemistry Centre (BZH), Heidelberg University. The repository infrastructure and documentation were developed by Neele Drobnitzky ([ORCID iD: 0000-0002-3181-941X](https://orcid.org/0000-0002-3181-941X)) and Achim Winandi ([ORCID iD: 0000-0003-4800-7925](https://orcid.org/0000-0003-4800-7925)). Achim Winandi also developed the [ELN Metadata Diff Viewer](https://achimw.codeberg.page/eln-metadata-diff/).
 
-The initial `_SFB1638` template collection was created by Neele Drobnitzky and is described in the accompanying user guide ([DOI: 10.5281/zenodo.20605341](https://doi.org/10.5281/zenodo.20605341)).
+The initial `_SFB1638` template collection was created by Neele Drobnitzky and is described in the accompanying user guide ([DOI: 10.5281/zenodo.20605340](https://doi.org/10.5281/zenodo.20605340)).
 
 We gratefully acknowledge Caroline Kolenda ([ORCID iD: 0009-0004-0860-6258](https://orcid.org/0009-0004-0860-6258)) and her colleagues in the [Meinecke Lab](https://bzh.db-engine.de/group/81/meinecke) (led by Michael Meinecke, [ORCID iD: 0000-0003-1414-6951](https://orcid.org/0000-0003-1414-6951)), as well as Jochen Baßler ([ORCID iD: 0000-0002-7441-7867](https://orcid.org/0000-0002-7441-7867)), for contributing feature ideas, testing the templates, and providing valuable feedback throughout their development.
