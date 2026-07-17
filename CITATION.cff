@@ -69,6 +69,6 @@ references:
         orcid: 'https://orcid.org/0000-0003-4800-7925'
     doi: 10.35097/2rmp99h5nxg29yj1
     notes: >-
-      Developed and published separately by Achim Winandi. Not part of this
-      deposit; referenced here as a complementary tool used to review changes to
-      templates in this repository.
+      A client-side web tool visualizing `.eln` file metadata differences across
+      GitHub pull requests/GitLab merge requests. Referenced here as a
+      complementary tool used to review changes to templates in this repository.
