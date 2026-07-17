@@ -52,6 +52,7 @@ references:
     authors:
       - given-names: Neele
         family-names: Drobnitzky
+        affiliation: Heidelberg University
         orcid: 'https://orcid.org/0000-0002-3181-941X'
     doi: 10.5281/zenodo.20605340
     notes: >-
@@ -66,6 +67,7 @@ references:
     authors:
       - given-names: Achim
         family-names: Winandi
+        affiliation: Karlsruhe Institute of Technology
         orcid: 'https://orcid.org/0000-0003-4800-7925'
     doi: 10.35097/2rmp99h5nxg29yj1
     notes: >-
