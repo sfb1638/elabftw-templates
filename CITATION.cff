@@ -57,12 +57,9 @@ references:
         orcid: 'https://orcid.org/0000-0002-3181-941X'
     doi: 10.5281/zenodo.20605340
     notes: >-
-      The initially uploaded '_SFB eLabFTW' templates distributed via this 
-      repository -- their field design, structure, and documentation -- are
-      authored solely by Neele Drobnitzky. This Zenodo record is the citable
-      reference for the templates and the accompanying User Guide. This
-      repository provides the distribution platform, folder structure, and
-      licensing.
+      This Zenodo record is the accompanying User Guide. Please also use it as a
+      citable reference for the voluntary attribution of the `*_SFB-1638.eln`
+      templates.
   - type: software
     title: ELN Metadata Diff Viewer
     authors:
