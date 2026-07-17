@@ -4,8 +4,8 @@
 cff-version: 1.2.0
 title: eLabFTW Template Repository
 message: >-
-  If you use this dataset, please cite it using the metadata
-  from this file.
+  If you use this repository, please cite it using the
+  metadata from this file.
 type: dataset
 authors:
   - given-names: Neele
@@ -21,21 +21,24 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.21103853
     description: Version 1.0 deposited on Zenodo
+repository-code: 'https://github.com/sfb1638/elabftw-templates'
 abstract: >-
   Setting up an electronic lab notebook takes time most
   researchers do not have. Every group ends up solving the
   same documentation problems independently. This repository
-  is an attempt to do that work together instead.
-
-
-  The aim is a shared collection of eLabFTW templates and
-  reference entries that any lab can download, import, and
-  adapt. Templates are designed to be comprehensive and
-  educational — they document not just what to record but
-  why — and to interlink with each other as a coherent
-  package. Fields that are irrelevant to a particular group
-  can simply be removed or ignored; the templates are a
-  starting point, not a prescription.
+  makes that work shareable: a structured,
+  version-controlled distribution point for eLabFTW
+  templates and reference entries, with a contribution
+  workflow so any lab can adapt and feed changes back. The
+  templates themselves -- their field design, structure, and
+  underlying rationale -- are authored by Neele Drobnitzky
+  and described in full in the accompanying User Guide (see
+  the linked reference below for the template package
+  citation). This repository provides the folder structure,
+  filenames, and licensing that make the templates
+  practically distributable, in conjunction with tooling
+  maintained separately (including the .eln metadata diff
+  viewer) that supports reviewing changes via GitHub.
 keywords:
   - eLabFTW
   - ELN
@@ -43,3 +46,29 @@ keywords:
   - SFB 1638
   - CRC 1638
 license: CC0-1.0
+references:
+  - type: manual
+    title: eLabFTW Template Package for Life Sciences
+    authors:
+      - given-names: Neele
+        family-names: Drobnitzky
+        email: neele.drobnitzky@bzh.uni-heidelberg.de
+        affiliation: Heidelberg University
+        orcid: 'https://orcid.org/0000-0002-3181-941X'
+    doi: 10.5281/zenodo.20605340
+    notes: >-
+      This Zenodo record is the accompanying User Guide. Please also use it as a
+      citable reference for the voluntary attribution of the `*_SFB-1638.eln`
+      templates.
+  - type: software
+    title: ELN Metadata Diff Viewer
+    authors:
+      - given-names: Achim
+        family-names: Winandi
+        affiliation: Karlsruhe Institute of Technology
+        orcid: 'https://orcid.org/0000-0003-4800-7925'
+    doi: 10.35097/2rmp99h5nxg29yj1
+    notes: >-
+      A client-side web tool visualizing `.eln` file metadata differences across
+      GitHub pull requests/GitLab merge requests. Referenced here as a
+      complementary tool used to review changes to templates in this repository.
