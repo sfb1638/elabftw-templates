@@ -23,18 +23,22 @@ identifiers:
     description: Version 1.0 deposited on Zenodo
 repository-code: 'https://github.com/sfb1638/elabftw-templates'
 abstract: >-
-  Setting up an electronic lab notebook takes time most researchers do not have.
-  Every group ends up solving the same documentation problems independently.
-  This repository makes that work shareable: a structured, version-controlled
-  distribution point for eLabFTW templates and reference entries, with a
-  contribution workflow so any lab can adapt and feed changes back.
-  The templates themselves—their field design, structure, and underlying
-  rationale—are authored by Neele Drobnitzky and described in full in the
-  accompanying User Guide (see the linked reference below for the template
-  package citation). This repository provides the folder structure, filenames,
-  and licensing that make the templates practically distributable, in
-  conjunction with tooling maintained separately (including the .eln metadata
-  diff viewer) that supports reviewing changes via GitHub.
+  Setting up an electronic lab notebook takes time most
+  researchers do not have. Every group ends up solving the
+  same documentation problems independently. This repository
+  makes that work shareable: a structured,
+  version-controlled distribution point for eLabFTW
+  templates and reference entries, with a contribution
+  workflow so any lab can adapt and feed changes back. The
+  templates themselves -- their field design, structure, and
+  underlying rationale -- are authored by Neele Drobnitzky
+  and described in full in the accompanying User Guide (see
+  the linked reference below for the template package
+  citation). This repository provides the folder structure,
+  filenames, and licensing that make the templates
+  practically distributable, in conjunction with tooling
+  maintained separately (including the .eln metadata diff
+  viewer) that supports reviewing changes via GitHub.
 keywords:
   - eLabFTW
   - ELN
@@ -52,10 +56,11 @@ references:
     doi: 10.5281/zenodo.20605340
     notes: >-
       The initially uploaded '_SFB eLabFTW' templates distributed via this 
-      repository—their field design, structure, and documentation—are authored 
-      solely by Neele Drobnitzky. This Zenodo record is the citable reference 
-      for the templates and the accompanying User Guide. This repository provides 
-      the distribution platform, folder structure, and licensing.
+      repository -- their field design, structure, and documentation -- are
+      authored solely by Neele Drobnitzky. This Zenodo record is the citable
+      reference for the templates and the accompanying User Guide. This
+      repository provides the distribution platform, folder structure, and
+      licensing.
   - type: software
     title: ELN Metadata Diff Viewer
     authors:
@@ -65,5 +70,5 @@ references:
     doi: 10.35097/2rmp99h5nxg29yj1
     notes: >-
       Developed and published separately by Achim Winandi. Not part of this
-      deposit; referenced here as a complementary tool used to review changes
-      to templates in this repository.
+      deposit; referenced here as a complementary tool used to review changes to
+      templates in this repository.
