@@ -10,7 +10,10 @@ Templates are organised according to the [DFG Classification of Scientific Disci
 
 Templates are distributed as `.eln` files ([ELN file format](https://github.com/TheELNConsortium/TheELNFileFormat), a ZIP-based open standard) and can be imported directly into any eLabFTW instance via **Admin panel → Import**.
 
-Templates suffixed with `_SFB1638` were originally developed as part of a template package for INF team of [SFB 1638 / CRC 1638 INF project](https://www.sfb1638.de/node/44) [(DFG GEPRIS 511488495)](https://gepris.dfg.de/project/511488495?lang=en) at the Biochemistry Centre (BZH), University of Heidelberg, and are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). The package is described in the published user guide ([DOI: 10.5281/zenodo.20605340](https://doi.org/10.5281/zenodo.20605340)).
+Templates suffixed with `_SFB1638` were originally developed as part of a template package for research groups of [SFB 1638 / CRC 1638](https://www.sfb1638.de) [(DFG GEPRIS 511488495)](https://gepris.dfg.de/project/511488495?lang=en) at the Biochemistry Centre (BZH), University of Heidelberg, and are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
+Voluntary attribution: Drobnitzky, N. (2026). eLabFTW Template Package for Life Sciences. Zenodo. https://doi.org/10.5281/zenodo.20605340
+
+The package is described in the published user guide ([DOI: 10.5281/zenodo.20605340](https://doi.org/10.5281/zenodo.20605340)).
 
 Unless otherwise stated, templates in this repository are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
 
