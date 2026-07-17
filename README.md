@@ -14,8 +14,6 @@ Templates suffixed with `_SFB1638` were originally developed by Neele Drobnitzky
 
 > Drobnitzky, N. (2026). eLabFTW Template Package for Life Sciences. Zenodo. https://doi.org/10.5281/zenodo.20605340
 
-The package is described in the published user guide ([DOI: 10.5281/zenodo.20605340](https://doi.org/10.5281/zenodo.20605340)).
-
 Unless otherwise stated, templates in this repository are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ---
