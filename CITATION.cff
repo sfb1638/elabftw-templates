@@ -20,7 +20,7 @@ authors:
 identifiers:
   - type: doi
     value: 10.5281/zenodo.21103853
-    description: Version 1.0 deposited on Zenodo
+    description: Version 0.1 deposited on Zenodo
 repository-code: 'https://github.com/sfb1638/elabftw-templates'
 abstract: >-
   Setting up an electronic lab notebook takes time most
@@ -46,6 +46,8 @@ keywords:
   - SFB 1638
   - CRC 1638
 license: CC0-1.0
+version: '0.1'
+date-released: '2026-07-17'
 references:
   - type: manual
     title: eLabFTW Template Package for Life Sciences
