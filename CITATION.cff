@@ -58,7 +58,7 @@ references:
     doi: 10.5281/zenodo.20605340
     notes: >-
       This Zenodo record is the accompanying User Guide. Please also use it as a
-      citable reference for the voluntary attribution of the `*_SFB-1638.eln`
+      citable reference for the voluntary attribution of the `*_SFB1638.eln`
       templates.
   - type: software
     title: ELN Metadata Diff Viewer
