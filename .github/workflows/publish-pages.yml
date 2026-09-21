@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - '*.eln'
+      - '**/*.eln'
       - '.github/**'
   workflow_dispatch:
 
