@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>eLabFTW Template Viewer (SFB1638)</title>
+  <style>
+    :root {
+      --bg: #fff;
+      --card: #f6f8fa;
+      --surface: var(--bg);
+      --ink: #1a1a1a;
+      --ink-soft: #57606a;
+      --line: #d0d7de;
+      --accent: #0060DF;
+      --accent-hover: #1d4ed8;
+      --danger-fg: #a40e26;
+      --danger-bg: #ffebe9;
+      --radius: 10px;
+      --radius-sm: 7px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      /* Use anywhere instead of break-word, or it breaks on browsers without setHTML */
+      overflow-wrap: anywhere;
+    }
+
+    html {
+      line-height: 1.5;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    main {
+      width: min(100% - 2rem, 1200px);
+      margin-inline: auto;
+      padding: 2.5rem 0 4rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+      line-height: 1.3;
+    }
+
+    h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    h4 {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    h5 {
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .intro {
+      margin-bottom: 1.5rem;
+      color: var(--ink-soft);
+    }
+
+    .intro a {
+      color: var(--ink-soft);
+    }
+
+    .intro summary {
+      margin-bottom: 0.75rem;
+    }
+
+    #filter-container {
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.0rem;
+    }
+
+    #filter-container > div {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    #filter-container label {
+      color: var(--ink-soft);
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .filter {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--card);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .filter:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    #compatibility-warning:not(:empty) {
+      margin-bottom: 1rem;
+    }
+
+    #result-status {
+      margin-bottom: 1rem;
+      color: var(--ink-soft);
+      font-size: 0.875rem;
+    }
+
+    #container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: auto;
+    }
+
+    .card > summary {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 1.25rem;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .card > summary::before {
+      content: "›";
+      flex: 0 0 auto;
+      color: var(--ink-soft);
+      font-size: 1.5rem;
+      line-height: 1;
+      transform: rotate(0deg);
+      transition: transform 0.15s ease;
+    }
+
+    .card[open] > summary::before {
+      transform: rotate(90deg);
+    }
+
+    .card > summary:hover {
+      background: var(--surface);
+    }
+
+    .card > summary:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+      outline-offset: -3px;
+    }
+
+    .summary-content {
+      min-width: 0;
+    }
+
+    .summary-content h2 {
+      margin-bottom: 0;
+    }
+
+    .summary-content .muted {
+      margin: 0.25rem 0 0;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+    }
+
+    .card-content {
+      padding: 0 1rem 1.25rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .card-content a.buttonlike {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      margin-top: 1.25rem;
+      margin-bottom: 0.75rem;
+      padding: 0.45rem 0.8rem;
+
+      border-radius: var(--radius-sm);
+      background: var(--accent);
+      color: #fff;
+
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1;
+
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .card-content a.buttonlike:hover {
+      background: var(--accent-hover);
+    }
+
+    .card-content a.buttonlike:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+      outline-offset: 2px;
+    }
+
+    .maintext-container,
+    .all-extra-fields-groups-container {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+    }
+
+    .maintext-container > h3,
+    .all-extra-fields-groups-container > h3 {
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .maintext-content,
+    .all-extra-fields-groups-content {
+      padding-top: 0.25rem;
+      /* max-height: 400px;
+      overflow-y: auto;
+      scrollbar-gutter: stable; */
+    }
+
+    .all-extra-fields-groups-content {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .extra-fields-group {
+      display: grid;
+      gap: 0.75rem;
+
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--card);
+    }
+
+    .extra-fields-group > h4 {
+      margin-bottom: 0;
+    }
+
+    .extra-field {
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+    }
+
+    .extra-field p {
+      margin-bottom: 0.3rem;
+      color: var(--ink-soft);
+      font-size: 0.875rem;
+    }
+
+    .extra-field p:last-child {
+      margin-bottom: 0;
+    }
+
+    .status {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      color: var(--ink-soft);
+    }
+
+    .error {
+      border-color: color-mix(in srgb, var(--danger-fg) 30%, var(--line));
+      background: var(--danger-bg);
+      color: var(--danger-fg);
+    }
+
+    @media (max-width: 600px) {
+      main {
+        width: min(100% - 1rem, 960px);
+        padding-top: 1.5rem;
+      }
+
+      #filter-container {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .card > summary {
+        padding: 1rem;
+      }
+
+      .card-content {
+        padding: 0 1rem 1rem;
+      }
+
+      .maintext-container,
+      .all-extra-fields-groups-container,
+      .extra-fields-group {
+        padding: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>eLabFTW Template Viewer (SFB1638)</h1>
+
+    <details class="intro">
+      <summary>How to use this page</summary>
+      <p>
+        Browse and search the available eLabFTW templates from the
+        <a href="https://github.com/sfb1638/elabftw-templates" rel="noopener noreferrer" target="_blank">
+          SFB 1638 template repository
+        </a>.
+        For security reasons, the templates are displayed with their styling removed.
+        When imported into eLabFTW, they may look different, but all content and information remain unchanged.
+      </p>
+      <p>
+        Use the filters below to narrow the list.
+        If you use more than one filter, a template must match all of them to be shown.
+        Excluding matches is not supported.
+      </p>
+      <p>
+        We plan to migrate the ELN files to
+        <a href="https://eln.community" rel="noopener noreferrer" target="_blank">
+          eln.community
+        </a>
+        once its API supports automated uploads.
+        Until then, this page serves as an interim solution for browsing and viewing the templates stored in the GitHub repository.
+      </p>
+      <p>
+        If you encounter a bug or have a suggestion for improvement, feel free to
+        <a href="https://github.com/sfb1638/elabftw-templates/issues" rel="noopener noreferrer" target="_blank">
+          open an issue
+        </a>
+        or contact us using the details provided in the
+        <a href="https://github.com/sfb1638/elabftw-templates/blob/main/CITATION.cff" rel="noopener noreferrer" target="_blank">
+          citation information
+        </a>.
+      </p>
+    </details>
+
+    <div id="filter-container">
+      <div>
+        <label for="filterName">Filter by Name</label>
+        <input id="filterName" class="filter" type="search" />
+      </div>
+      <div>
+        <label for="filterAuthor">Filter by Author</label>
+        <input id="filterAuthor" class="filter" type="search" />
+      </div>
+      <div>
+        <label for="filterText">Filter by Text</label>
+        <input id="filterText" class="filter" type="search" />
+      </div>
+      <div>
+        <label for="filterExtraField">Filter by Extra Field</label>
+        <input id="filterExtraField" class="filter" type="search" placeholder="Name, group, type, value, description..."
+        />
+      </div>
+    </div>
+
+    <div id="compatibility-warning"></div>
+
+    <div id="result-status" aria-live="polite"></div>
+
+    <div id="container">
+      <div class="status">Loading data...</div>
+    </div>
+
+  </main>
+
+  <script src="./data.js" onerror="globalThis.TEMPLATE_DATA_LOAD_FAILED = true"></script>
+
+  <script>
+
+    const BROWSER_COMPATIBILITY_WARNING = `
+          <div class="status error">
+            Please note that this page requires Chrome (or Edge) ≥ 146, Firefox ≥ 148, or Opera ≥ 130 for full functionality.
+            Safari is not supported as of 2026-09-15.
+            This page uses the <code>setHTML()</code> method from the
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Sanitizer" rel="noopener noreferrer" target="_blank">
+              Sanitizer API
+            </a>,
+            which is not yet available in all browsers.
+            <strong>In unsupported browsers, the “Main Text” section may not be displayed correctly and may instead show technical formatting code (raw HTML).</strong>
+          </div>
+        `;
+    const GITHUB_REPO_URL = "https://github.com/sfb1638/elabftw-templates/blob/main/"
+
+    const compatibilityWarning = document.getElementById("compatibility-warning");
+    const container = document.getElementById("container");
+    const filterAuthor = document.getElementById("filterAuthor");
+    const filterExtraField = document.getElementById("filterExtraField");
+    const filterName = document.getElementById("filterName");
+    const filterText = document.getElementById("filterText");
+    const resultStatus = document.getElementById("result-status");
+
+    let TEMPLATES = [];
+
+    const debouncedApplyFilters = debounce(applyFiltersAndRender, 250);
+
+    function applyFiltersAndRender() {
+      const queryName = filterName.value.trim().toLowerCase();
+      const queryAuthor = filterAuthor.value.trim().toLowerCase();
+      const queryText = filterText.value.trim().toLowerCase();
+      const queryExtraField = filterExtraField.value.trim().toLowerCase();
+
+      const filteredTemplates = TEMPLATES.filter(template => {
+        const matchesName =
+          template._search.name.includes(queryName);
+
+        const matchesAuthor =
+          template._search.author.includes(queryAuthor);
+
+        const matchesText =
+          template._search.text.includes(queryText);
+
+        const matchesExtraField =
+          template._search.extra.includes(queryExtraField);
+
+        return (
+          matchesName &&
+          matchesAuthor &&
+          matchesText &&
+          matchesExtraField
+        );
+      });
+
+      render(filteredTemplates);
+    }
+
+    function debounce(func, delay = 300) {
+      let timeoutId;
+
+      return () => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(func, delay);
+      };
+    }
+
+    function formatAuthor(author = {}) {
+      return [author?.givenName, author?.familyName].filter(Boolean).join(" ")
+    }
+
+    function getExtraFieldsSearchText(template) {
+      return (template?.extra_fields_groups ?? [])
+        .flatMap(group => [
+          group?.name,
+          ...(group?.entries ?? []).flatMap(field => [
+            field?.key,
+            field?.type,
+            field?.description,
+            field?.value,
+          ]),
+        ])
+        .filter(value => value != null)
+        .join(" ")
+        .toLowerCase();
+    }
+
+    function render(templates) {
+      container.replaceChildren();
+
+      resultStatus.textContent =
+        `${templates.length} template${templates.length === 1 ? "" : "s"} found.`;
+
+      if (!templates.length) {
+        const divNoTemplatesFound = document.createElement("div");
+        divNoTemplatesFound.className = "status";
+        divNoTemplatesFound.textContent = "No templates found.";
+        container.append(divNoTemplatesFound);
+        return;
+      }
+
+      for (const template of templates) {
+        const detailsCard = document.createElement("details");
+        detailsCard.className = "card";
+
+        const summaryTemplate = document.createElement("summary");
+
+        const divSummaryContent = document.createElement("div");
+        divSummaryContent.className = "summary-content";
+
+        // Title
+        const hSummaryContent = document.createElement("h2");
+        hSummaryContent.textContent = template?.name || "Untitled";
+
+        // Author
+        const pAuthor = document.createElement("p");
+        pAuthor.className = "muted";
+        pAuthor.textContent = "Author: " + (formatAuthor(template?.author) || "Unknown");
+
+        divSummaryContent.append(hSummaryContent, pAuthor);
+        summaryTemplate.append(divSummaryContent);
+
+        const divCardContent = document.createElement("div");
+        divCardContent.className = "card-content";
+
+        // Link To File
+        const aLinkGithub = document.createElement("a");
+        aLinkGithub.className = "buttonlike";
+        aLinkGithub.href = GITHUB_REPO_URL + template.filepath.split("/").map(encodeURIComponent).join("/");
+        aLinkGithub.rel = "noopener noreferrer";
+        aLinkGithub.target = "_blank";
+        aLinkGithub.textContent = "Open file in GitHub";
+
+        // Type
+        const pGenre = document.createElement("p");
+        pGenre.textContent = "Type: " + (template?.genre ?? "Unknown");
+
+        // Main Text
+        const divMainTextContainer = document.createElement("div");
+        divMainTextContainer.className = "maintext-container";
+
+        const hMainText = document.createElement("h3");
+        hMainText.textContent = "Main Text";
+
+        const divMainTextContent = document.createElement("div");
+        divMainTextContent.className = "maintext-content";
+        if ("setHTML" in divMainTextContent) {
+          divMainTextContent.setHTML(template?.text || "No text available.");
+        } else {
+          divMainTextContent.textContent = template?.text ?? "No text available.";
+        }
+
+        divMainTextContainer.append(hMainText, divMainTextContent);
+
+        // Extra Fields
+        const divAllExtraFieldsGroupsContainer = document.createElement("div");
+        divAllExtraFieldsGroupsContainer.className = "all-extra-fields-groups-container";
+
+        const hAllExtraFieldsGroupsTitle = document.createElement("h3");
+        hAllExtraFieldsGroupsTitle.textContent = "Extra fields";
+        divAllExtraFieldsGroupsContainer.append(hAllExtraFieldsGroupsTitle);
+
+        const divAllExtraFieldsGroupsContent = document.createElement("div");
+        divAllExtraFieldsGroupsContent.className = "all-extra-fields-groups-content";
+
+        const extraFieldGroups = template?.extra_fields_groups ?? [];
+        for (const extraFieldsGroupWithEntries of extraFieldGroups) {
+          const divExtraFieldsGroup = document.createElement("div");
+          divExtraFieldsGroup.className = "extra-fields-group";
+
+          const hExtraFieldsGroup = document.createElement("h4");
+          hExtraFieldsGroup.textContent = "Fields Group: " + extraFieldsGroupWithEntries.name;
+          divExtraFieldsGroup.append(hExtraFieldsGroup);
+
+          const extraFields =  extraFieldsGroupWithEntries.entries ?? [];
+          for (const extraField of extraFields) {
+            const divExtraField = document.createElement("div");
+            divExtraField.className = "extra-field";
+
+            const hExtraFieldKey = document.createElement("h5");
+            hExtraFieldKey.textContent = extraField.key;
+
+            const pExtraFieldType = document.createElement("p");
+            pExtraFieldType.textContent = "Type: " + (extraField?.type ?? "");
+
+            const pExtraFieldValue = document.createElement("p");
+            pExtraFieldValue.textContent = "Value: " + (extraField?.value ?? "");
+
+            const pExtraFieldDescription = document.createElement("p");
+            pExtraFieldDescription.textContent = "Description: " + (extraField?.description ?? "");
+
+            divExtraField.append(hExtraFieldKey, pExtraFieldType, pExtraFieldValue, pExtraFieldDescription);
+            divExtraFieldsGroup.append(divExtraField);
+          }
+          divAllExtraFieldsGroupsContent.append(divExtraFieldsGroup);
+        }
+        if (extraFieldGroups.length > 0) {
+          divAllExtraFieldsGroupsContainer.append(divAllExtraFieldsGroupsContent);
+        } else {
+          const divNoExtraFields = document.createElement("div");
+          divNoExtraFields.textContent = "No extra fields available.";
+          divNoExtraFields.className = "all-extra-fields-groups-content";
+          divAllExtraFieldsGroupsContainer.append(divNoExtraFields);
+        }
+
+        divCardContent.append(aLinkGithub, pGenre, divMainTextContainer, divAllExtraFieldsGroupsContainer);
+        detailsCard.append(summaryTemplate, divCardContent);
+        container.append(detailsCard);
+      }
+    }
+
+    function showFatalError(error) {
+      console.error("Fatal error:", error);
+
+      const container = document.getElementById("container");
+
+      if (container) {
+        const message = document.createElement("div");
+        message.className = "status error";
+        message.textContent = (
+          "The page had an error while loading or processing the data. " +
+          "Please try again later. " +
+          "If that does not work, please complain to the maintainers of this page (see contact information in “How to use this page” at the top)."
+        )
+        container.replaceChildren(message);
+      }
+    }
+
+    function init() {
+      // -- Check browser compatibility ----------------------------------------
+      if (!("setHTML" in Element.prototype)) {
+        compatibilityWarning.innerHTML = BROWSER_COMPATIBILITY_WARNING;
+      }
+
+      // -- Check data load ----------------------------------------------------
+      if (globalThis.TEMPLATE_DATA_LOAD_FAILED) {
+        showFatalError(new Error("data.js could not be loaded."));
+        return
+      }
+
+      // -- Prepare templates --------------------------------------------------
+      // Load templates from data.js and build search index
+      TEMPLATES = (globalThis.TEMPLATE_DATA ?? []).map(template => ({
+        ...template,
+        _search: {
+          name: (template?.name ?? "").toLowerCase(),
+          author: formatAuthor(template?.author).toLowerCase(),
+          text: (template?.text ?? "").toLowerCase(),
+          extra: getExtraFieldsSearchText(template),
+        },
+      }));
+
+      // Sort eln files alphabetically
+      TEMPLATES.sort((a, b) =>
+        (a?.name ?? "").localeCompare(b?.name ?? "", undefined, {
+          sensitivity: "base",
+          numeric: true,
+        })
+      );
+
+      // Sort Extra Fields according to position (if available)
+      for (const template of TEMPLATES) {
+        const extraFieldGroups = template?.extra_fields_groups ?? [];
+        for (const extraFieldsGroupWithEntries of extraFieldGroups) {
+          (extraFieldsGroupWithEntries.entries ?? [])
+            .sort((a, b) => (a.position ?? Infinity) - (b.position ?? Infinity));
+        }
+      }
+
+      // -- Register event listeners -------------------------------------------
+      filterName.addEventListener("input", debouncedApplyFilters);
+      filterAuthor.addEventListener("input", debouncedApplyFilters);
+      filterText.addEventListener("input", debouncedApplyFilters);
+      filterExtraField.addEventListener("input", debouncedApplyFilters);
+
+      // -- Apply filters and render -----------------------------------------
+      applyFiltersAndRender();
+    }
+
+    try {
+      init();
+    } catch (error) {
+      showFatalError(error);
+    }
+  </script>
+</body>
+</html>
