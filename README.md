@@ -30,11 +30,11 @@ This tool is central to how feedback works in this repository: when someone prop
 ---
 
 ## Editing and previewing the template body (HTML)
- 
+
 eLabFTW template bodies are written in HTML. When you export a `.eln` file, the body HTML is stored as an escaped JSON string inside `ro-crate-metadata.json` (e.g. `"` becomes `\"`, `—` becomes `\u2014`), so pasting it directly into an HTML editor won't render correctly.
- 
+
 To preview or edit the body HTML outside of eLabFTW:
- 
+
 1. Get the body HTML — either open the `.eln` file's `ro-crate-metadata.json` directly, or use the [ELN Metadata Diff Viewer](#comparing-versions-and-reviewing-changes-the-eln-metadata-diff-viewer), and search for `"text": "` to locate the relevant entry's body.
 2. Copy the value of that `text` field.
 
