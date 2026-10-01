@@ -70,9 +70,6 @@ Modify and export                      │
   Navigate to the correct folder in your fork and upload the file
                         │
                         ▼
-   New template only: add it to TEMPLATES.md on the same branch
-                        │
-                        ▼
   Commit to a new branch, then open a pull request against main
                         │
                         ▼
@@ -253,36 +250,7 @@ GitHub saves the uploaded file as a commit on the new branch.
 
 ---
 
-## 8. Add your template to the Template Catalog
-
-> **Editing an existing file:** skip this section. The catalog entry for the file already exists. Go to section 9 and open the pull request.
-
-Before opening the pull request, add a row for your new template to [`TEMPLATES.md`](TEMPLATES.md) on the same contribution branch. This keeps the catalog entry and the `.eln` file in the same pull request, so a maintainer can review both together.
-
-1. Return to your fork on GitHub.
-2. Confirm you are viewing your contribution branch, not main. The branch selector in the upper left should show the branch name you created in step 7.
-3. Navigate to [`TEMPLATES.md`](TEMPLATES.md) in the root of the repository.
-4. Select the pencil icon (**Edit this file**) in the upper-right corner.
-5. Find the table matching the folder your template belongs to (for example `2_Life_Sciences/2_Resources`), the same folder you uploaded the `.eln` file into in step 7.
-6. Within that table, find the subsection that best matches your template's function (for example Organisms, Stocks, Antibodies, Navigation & getting started).
-7. Add a new row, matching the format of the existing rows:
-
-   ```markdown
-   | `your-template-filename.eln` | One-sentence description of what the template records or links to. |
-   ```
-
-8. Keep the abstract short: one sentence stating what the template records, and, if relevant, which other templates it links to.
-9. If no existing subsection fits, add the row under the closest one and say so in the pull request description, so maintainers can decide whether a new subsection is needed.
-10. Scroll to the bottom of the page.
-11. Enter a short commit message, for example `Add [template name] to catalog`.
-12. Confirm **Commit directly to the [your-branch-name] branch** is selected, not "Create a new branch."
-13. Select **Commit changes**.
-
-This adds a second commit to the same branch you created in step 7, so both files travel together in the same pull request.
-
----
-
-## 9. Open a pull request against main
+## 8. Open a pull request against main
 
 A pull request asks the maintainers of the original repository to review and accept the `.eln` file.
 
@@ -304,14 +272,13 @@ Before creating the pull request, confirm that:
 - The head repository is your fork
 - The compare branch is your contribution branch
 - The correct `.eln` file is included
-- (New template only) The `TEMPLATES.md` update from section 8 is included
 - No unrelated files are included
 
 Learn more about [Creating a pull request form a fork (GitHub Docs)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
 ---
 
-## 10. Write the pull request description
+## 9. Write the pull request description
 
 Use a clear title that summarizes the change, for example `Update the sample preparation ELN template` for an edit, or `Add a microscopy metadata experiment template` for a new template.
 
@@ -359,9 +326,6 @@ Added `templates/microscopy-experiment-metadata.eln`.
 This is a new experiment template for recording microscopy acquisition
 metadata. It was built in eLabFTW and exported as an `.eln` file.
 
-Also added a row for this template to TEMPLATES.md under
-2_Life_Sciences/2_Resources.
-
 ## Why
 
 The repository did not yet have a template for microscopy acquisition
@@ -377,7 +341,7 @@ Select **Create pull request** when the contribution is ready for review. Use **
 
 ---
 
-## 11. Review limitations for `.eln` files
+## 10. Review limitations for `.eln` files
 
 An `.eln` file is an archive rather than a normal text file. GitHub therefore treats it as a binary file and does not display a detailed line-by-line comparison of the changes. For an edit, the pull request may show only that the file was replaced. For a new template, it may show only that a file was added.
 
@@ -385,13 +349,13 @@ For this reason, the pull request description must clearly state what was change
 
 ---
 
-## 12. Allow maintainer edits
+## 11. Allow maintainer edits
 
 When available, select **Allow edits from maintainers** for the pull request. This allows project maintainers to make corrections on the pull-request branch. Because `.eln` files normally need to be edited through eLabFTW, maintainers may instead ask the contributor to make the requested corrections and upload another exported version.
 
 ---
 
-## 13. Respond to review comments
+## 12. Respond to review comments
 
 A maintainer may approve, request clarification, ask for corrections, or close the pull request. Respond to questions in the pull request conversation.
 
@@ -405,7 +369,6 @@ When another revision is required:
 6. Return to the same folder and branch on GitHub.
 7. Select **Add file → Upload files** and upload the revised `.eln` file.
 8. Commit the change directly to the existing pull request branch.
-9. (New template only) If the review comments require a wording change to the catalog abstract, repeat section 8 on the same branch and commit the updated `TEMPLATES.md` row as well.
 
 Example commit message: `Address review comments`
 
@@ -413,22 +376,21 @@ The existing pull request updates automatically. Do not create a second pull req
 
 ---
 
-## 14. Maintainer review
+## 13. Maintainer review
 
 Because the `.eln` file is a ZIP archive, maintainers should not rely on GitHub's file comparison. The [ELN Metadata Diff Viewer](https://achimw.codeberg.page/eln-metadata-diff/) can provide an overview of changes to the metadata. Maintainers should also:
 
 1. Read the pull request title and description.
 2. Confirm the pull request targets the **main** branch.
 3. Confirm the correct `.eln` file was replaced, or that a new template was added to the correct folder, and that no unrelated files were added.
-4. (New template only) Confirm `TEMPLATES.md` includes an accurate one-sentence abstract for the new file, in the correct table and subsection.
-5. Download the proposed `.eln` file and import it into a test eLabFTW instance.
-6. Check the experiment, resource or template content, metadata, attachments, links and formatting.
-7. Confirm the file imports without errors.
-8. Request corrections when necessary, then approve and merge when ready.
+4. Download the proposed `.eln` file and import it into a test eLabFTW instance.
+5. Check the experiment, resource or template content, metadata, attachments, links and formatting.
+6. Confirm the file imports without errors.
+7. Request corrections when necessary, then approve and merge when ready.
 
 ---
 
-## 15. Synchronize after the pull request is merged
+## 14. Synchronize after the pull request is merged
 
 After the maintainer merges the pull request:
 
@@ -455,7 +417,6 @@ For a new template, skip the download and import items. Confirm instead that you
 - [ ] I did not unzip or manually modify the archive.
 - [ ] I navigated to the correct folder in my fork before uploading.
 - [ ] I created a separate contribution branch.
-- [ ] (New template only) I added the corresponding row in `TEMPLATES.md`, on the same branch, in the correct table and subsection.
 - [ ] My pull request targets the original repository's **main** branch.
 - [ ] I described the changes clearly in the pull request.
 - [ ] I did not include confidential or unrelated information.
@@ -478,10 +439,6 @@ For a new template, skip the download and import items. Confirm instead that you
 **Giving a new template a filename that already exists** — GitHub replaces the existing file instead of adding yours. Check the folder first and choose a name that is not already in use.
 
 **Uploading directly to main** — select **Create a new branch for this commit and start a pull request** instead.
-
-**Forgetting to add a new template to `TEMPLATES.md`** — the `.eln` file is merged but stays undiscoverable in the catalog. Add the row in the same branch, before opening the pull request. This does not apply to edits of existing files.
-
-**Editing `TEMPLATES.md` on a different branch than the `.eln` upload** — this opens a second, unrelated pull request instead of adding a commit to the existing one. Confirm the branch selector shows your contribution branch before editing the file.
 
 **Expecting a text comparison on GitHub** — GitHub may not display the internal changes in an `.eln` archive. Explain the changes clearly in the pull request description.
 
